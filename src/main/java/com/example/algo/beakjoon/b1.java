@@ -12,12 +12,12 @@ public class b1
         String[] nums= String.valueOf(B).split(" ");
 
         int count = 0;
-
-        for(int i=0; i<A;i++){
-            if(Integer.parseInt(nums[i])==C){
-                count++;
-            }
-        }
+//
+//        for(int i=0; i<A;i++){
+//            if(Integer.parseInt(nums[i])==C){
+//                count++;
+//            }
+//        }
 
         System.out.println(count);
     }
