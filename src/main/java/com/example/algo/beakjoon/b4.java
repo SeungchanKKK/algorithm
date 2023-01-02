@@ -14,8 +14,8 @@ public class b4 {
             array.add(sc.nextInt());
         }
 
-        int mm = Arrays.stream(array).max().getAsInt();
-        int idx = array.
+        int mm = array.stream().max().get();
+        int idx = array.indexOf(mm);
 
         System.out.println(Arrays.stream(array).max().getAsInt());
     }
