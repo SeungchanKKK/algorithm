@@ -7,18 +7,21 @@ public class b1
     public static void main(String[] args)
     {Scanner sc = new Scanner(System.in);
         int A = sc.nextInt();
-        int B = sc.nextInt();
-        int C = sc.nextInt();
-        String[] nums= String.valueOf(B).split(" ");
+        int[] array = new int[A];
 
         int count = 0;
-//
-//        for(int i=0; i<A;i++){
-//            if(Integer.parseInt(nums[i])==C){
-//                count++;
-//            }
-//        }
 
+        for(int i=0; i<A;i++){
+           array[i]= sc.nextInt();
+        }
+
+        int B = sc.nextInt();
+
+        for(int i =0; i< array.length; i++){
+            if(array[i]==B){
+                count++;
+            }
+        }
         System.out.println(count);
     }
 }
