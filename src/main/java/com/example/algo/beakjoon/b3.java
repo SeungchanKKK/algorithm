@@ -13,7 +13,7 @@ public class b3 {
         for(int i=0; i<A;i++){
             array[i]= sc.nextInt();
         }
-        
-        System.out.println(Arrays.stream(array).min()+" "+Arrays.stream(array).max());
+
+        System.out.println(Arrays.stream(array).min().getAsInt()+" "+Arrays.stream(array).max().getAsInt());
     }
 }
