@@ -2,7 +2,7 @@ package com.example.algo.beakjoon;
 
 import java.io.*;
 import java.util.StringTokenizer;
-
+//A+B - 7 
 public class re3 {
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
