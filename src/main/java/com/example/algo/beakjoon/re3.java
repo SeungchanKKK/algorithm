@@ -3,10 +3,7 @@ package com.example.algo.beakjoon;
 import java.io.*;
 import java.util.StringTokenizer;
 
-// 빠른 A+B
-// https://m.blog.naver.com/ka28/221850826909 참조링크
-public class re2 {
-
+public class re3 {
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -18,7 +15,8 @@ public class re2 {
             st = new StringTokenizer(bf.readLine()," ");
             int A = Integer.parseInt(st.nextToken());
             int B =Integer.parseInt(st.nextToken());
-            bw.write(A+B+"\n");
+
+            bw.write("Case #"+(i+1)+": "+(A+B)+"\n");
         }
         bw.flush();
     }
