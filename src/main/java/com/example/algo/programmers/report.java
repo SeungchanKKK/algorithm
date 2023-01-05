@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 //프로그래머스 lv1 신고결과 받기
-class Solution {
+class report {
     public int[] solution(String[] id_list, String[] report, int k) {
         int[] answer = new int[id_list.length];
         HashMap<String,Integer>banCnt= new HashMap<>();
