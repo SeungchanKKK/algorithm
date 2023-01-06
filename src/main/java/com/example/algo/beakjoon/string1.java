@@ -1,7 +1,7 @@
 package com.example.algo.beakjoon;
 
 import java.util.Arrays;
-import java.util.Scanner;
+        import java.util.Scanner;
 
 //아스키코드
 public class string1 {
