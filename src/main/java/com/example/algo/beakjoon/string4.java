@@ -1,7 +1,7 @@
 package com.example.algo.beakjoon;
 
 import java.util.Scanner;
-
+//문자열 반복
 public class string4 {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
