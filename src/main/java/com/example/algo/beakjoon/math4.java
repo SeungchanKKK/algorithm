@@ -9,11 +9,15 @@ public class math4 {
         for (int i=0; i<N; i++){
             int floor = sc.nextInt();
             int room = sc.nextInt();
+            //동적계획법
         int people = roomNum(floor,room);
-            System.out.println(people);
+        //재귀용법
+        int people2 =getpeople(floor,room);
+           System.out.println(people);
+            System.out.println(people2);
         }
     }
-
+    // 동적계획법
     public static int roomNum(int floor,int room){
         int[][] cache = new int[floor+1][room];
         cache[0][0]=1;
@@ -34,4 +38,14 @@ public class math4 {
         }
         return cache[floor][room-1];
     }
+    //재귀용법
+    public static int getpeople(int floor,int room){
+        if(room<2){
+            return 1;
+        } else if (floor==0) {
+            return room;
+        }
+        return getpeople(floor-1,room)+getpeople(floor,room-1);
+    }
 }
+
