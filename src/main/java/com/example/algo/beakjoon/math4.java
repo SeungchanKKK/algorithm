@@ -12,9 +12,9 @@ public class math4 {
             //동적계획법
         int people = roomNum(floor,room);
         //재귀용법
-        int people2 =getpeople(floor,room);
+       // int people2 =getpeople(floor,room);
            System.out.println(people);
-            System.out.println(people2);
+           // System.out.println(people2);
         }
     }
     // 동적계획법
