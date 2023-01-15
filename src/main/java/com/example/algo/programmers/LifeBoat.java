@@ -17,7 +17,7 @@ public class LifeBoat {
         while (!peo.isEmpty()){
             if(peo.get(i)+peo.get(e)<=100){
                 peo.remove(i);
-                peo.remove(e);
+                peo.remove(e-1);
                 e--;
             }else {
                 e--;
