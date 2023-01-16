@@ -12,8 +12,7 @@ public class n2447 {
         if(N==1){
             return s;
         }else {
-
-            return Star(star,N/3);
+            return s;
         }
     }
 }
