@@ -10,6 +10,6 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] ars) {
         LongJump jump = new LongJump();
-        System.out.println(jump.solution(4));
+        System.out.println(jump.solution(1));
     }
 }
