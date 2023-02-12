@@ -6,7 +6,8 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] ars) {
-        PasswordForTwo passwordForTwo = new PasswordForTwo();
-        System.out.println(passwordForTwo.solution("aukks","wbqd",5));
+        HIndex hIndex = new HIndex();
+        int[] s ={3, 0, 6, 1, 5};
+        System.out.println(hIndex.solution(s));
     }
 }
