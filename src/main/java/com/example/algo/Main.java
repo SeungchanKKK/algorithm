@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] ars) {
-        PasswordForTwo passwordForTwo = new PasswordForTwo();
-        System.out.println(passwordForTwo.solution("aukks","wbqd",5));
+        JumpTeleport passwordForTwo = new JumpTeleport();
+        System.out.println(passwordForTwo.solution(5));
     }
 }
