@@ -1,26 +1,33 @@
 package com.example.algo.programmers;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 
 //구명보트
 public class LifeBoat {
     public int solution(int[] people, int limit) {
         int answer = 0;
-        Arrays.sort(people);
-        ArrayList<Integer>peo = new ArrayList<>();
-        for (int weight: people){
-            peo.add(weight);
+        ArrayList<Integer>rest = new ArrayList<>();
+        for (int person:people){
+            rest.add(person);
         }
-        int i=0;
-        int e=peo.size()-1;
-        while (!peo.isEmpty()){
-            if(peo.get(i)+peo.get(e)<=100){
-                peo.remove(i);
-                peo.remove(e-1);
-                e--;
+        Collections.sort(rest);
+        while (rest.size()!=0){
+            if(rest.get(0)<=limit/2&&rest.size()>1){
+                for (int i =rest.size()-1;i>=0;i--){
+                    if((rest.get(0)+rest.get(i))<=limit&&i!=0){
+                        answer++;
+                        rest.remove(i);
+                        rest.remove(0);
+                        break;
+                    } else if (i==0) {
+                        rest.remove(0);
+                        answer++;
+                    }
+                }
             }else {
-                e--;
+                rest.remove(0);
+                answer++;
             }
         }
         return answer;

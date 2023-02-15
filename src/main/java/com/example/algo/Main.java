@@ -1,18 +1,13 @@
 package com.example.algo;
 
-import com.example.algo.programmers.*;
-
-import java.util.Arrays;
+import com.example.algo.programmers.LifeBoat;
 
 public class Main {
     public static void main(String[] ars) {
 
-        JumpTeleport passwordForTwo = new JumpTeleport();
-        System.out.println(passwordForTwo.solution(5));
-
-        HIndex hIndex = new HIndex();
-        int[] s ={3, 0, 6, 1, 5};
-        System.out.println(hIndex.solution(s));
+        LifeBoat lifeBoat = new LifeBoat();
+        int[] s ={70, 50, 80, 50, 40, 60};
+        System.out.println(lifeBoat.solution(s,100));
 
     }
 }
