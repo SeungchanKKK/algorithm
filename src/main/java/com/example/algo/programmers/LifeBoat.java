@@ -13,22 +13,12 @@ public class LifeBoat {
         }
         Collections.sort(rest);
         while (rest.size()!=0){
-            if(rest.get(0)<=limit/2&&rest.size()>1){
-                for (int i =rest.size()-1;i>=0;i--){
-                    if((rest.get(0)+rest.get(i))<=limit&&i!=0){
-                        answer++;
-                        rest.remove(i);
-                        rest.remove(0);
-                        break;
-                    } else if (i==0) {
-                        rest.remove(0);
-                        answer++;
-                    }
-                }
-            }else {
+            int weight = rest.get(rest.size()-1);
+            if(weight+rest.get(0)<=limit&& rest.size()>1){
                 rest.remove(0);
-                answer++;
             }
+            rest.remove(rest.size()-1);
+            answer++;
         }
         return answer;
     }

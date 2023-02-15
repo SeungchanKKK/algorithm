@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] ars) {
 
         LifeBoat lifeBoat = new LifeBoat();
-        int[] s ={70, 50, 80, 50, 40, 60};
+        int[] s ={70, 80, 50};
         System.out.println(lifeBoat.solution(s,100));
 
     }
