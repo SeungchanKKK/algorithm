@@ -1,13 +1,13 @@
 package com.example.algo;
 
 import com.example.algo.programmers.LifeBoat;
+import com.example.algo.programmers.RotatingParentheses;
 
 public class Main {
     public static void main(String[] ars) {
 
-        LifeBoat lifeBoat = new LifeBoat();
-        int[] s ={70, 80, 50};
-        System.out.println(lifeBoat.solution(s,100));
+        RotatingParentheses lifeBoat = new RotatingParentheses();
+        System.out.println(lifeBoat.solution("[](){}"));
 
     }
 }
