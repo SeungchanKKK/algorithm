@@ -19,14 +19,10 @@ public class RotatingParentheses {
                         answer--;
                         break;
                     }
-                    if (letter.equals(")")) {
-                        if (stack.peek().equals("(")) {
+                    if (letter.equals(")")&&stack.peek().equals("(")) {
                             stack.pop();
-                        }
-                    } else if (letter.equals("]")) {
-                        if (stack.peek().equals("[")) {
+                    } else if (letter.equals("]")&&stack.peek().equals("[")) {
                             stack.pop();
-                        }
                     } else {
                         if (stack.peek().equals("{")) {
                             stack.pop();
