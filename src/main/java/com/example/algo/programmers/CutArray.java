@@ -6,6 +6,7 @@ public class CutArray {
         long step = left/n+1;
         long arr = left%n+1;
 
+        
         return answer;
     }
 }
