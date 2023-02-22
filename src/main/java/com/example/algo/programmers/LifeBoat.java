@@ -1,25 +1,23 @@
 package com.example.algo.programmers;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Deque;
+import java.util.*;
 
 //구명보트
 public class LifeBoat {
     public int solution(int[] people, int limit) {
         int answer = 0;
+        Arrays.sort(people);
         ArrayList<Integer>rest = new ArrayList<>();
         for (int person:people){
             rest.add(person);
         }
-        Collections.sort(rest);
-//        Deque<Integer>
-        while (rest.size()!=0){
-            int weight = rest.get(rest.size()-1);
-            if(weight+rest.get(0)<=limit&& rest.size()>1){
-                rest.remove(0);
+        Deque<Integer>deque = new ArrayDeque<>(rest);
+        while (deque.size()!=0){
+            int weight = deque.peekLast();
+            if(weight+deque.peek()<=limit&& deque.size()>1){
+                deque.poll();
             }
-            rest.remove(rest.size()-1);
+            deque.pop();
             answer++;
         }
         return answer;
