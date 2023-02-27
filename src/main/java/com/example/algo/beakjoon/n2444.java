@@ -9,7 +9,6 @@ public class n2444 {
         int repeat = 2*N-1;
         for(int i=1; i<=repeat;i++){
             for (int j=1; j<=repeat;j++){
-                if()
             }
         }
     }

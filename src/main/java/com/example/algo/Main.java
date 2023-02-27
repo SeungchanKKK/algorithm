@@ -2,14 +2,17 @@ package com.example.algo;
 
 import com.example.algo.programmers.MatrixMultiplication;
 import com.example.algo.programmers.RotatingParentheses;
+import com.example.algo.programmers.RoughKeyboard;
+
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] ars) {
 
-        MatrixMultiplication lifeBoat = new MatrixMultiplication();
-        int[][]a1 = {{1, 4}, {3, 2}, {4, 1}};
-        int[][]a2 = {{3, 3}, {3, 3}};
-        System.out.println(lifeBoat.solution(a1,a2));
+        RoughKeyboard roughKeyboard = new RoughKeyboard();
+        String[] keymap ={"ABACD", "BCEFD"};
+        String[] targets={"ABCD","AABB"};
+        System.out.println(Arrays.toString(roughKeyboard.solution(keymap, targets)));
 
     }
 }
