@@ -10,8 +10,8 @@ public class Main {
     public static void main(String[] ars) {
 
         RoughKeyboard roughKeyboard = new RoughKeyboard();
-        String[] keymap ={"ABACD", "BCEFD"};
-        String[] targets={"ABCD","AABB"};
+        String[] keymap ={"AGZ", "BSSS"};
+        String[] targets={"ASA","BGZ"};
         System.out.println(Arrays.toString(roughKeyboard.solution(keymap, targets)));
 
     }
