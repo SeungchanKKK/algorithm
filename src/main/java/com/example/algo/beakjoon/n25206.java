@@ -22,11 +22,10 @@ public class n25206 {
         chart.put("P",0.0);
         for (int i=0; i<20; i++){
             String input = sc.nextLine();
-            if(input.split(" ")[2].equals("P")){
-                break;
+            if(!input.split(" ")[2].equals("P")){
+                total+=Double.parseDouble(input.split(" ")[1]);
+                sum+=Double.parseDouble(input.split(" ")[1])*chart.get(input.split(" ")[2]);
             }
-            total+=Double.parseDouble(input.split(" ")[1]);
-            sum+=Double.parseDouble(input.split(" ")[1])*chart.get(input.split(" ")[2]);
         }
         System.out.printf("%.6f",sum/total);
     }
