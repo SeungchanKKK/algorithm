@@ -7,6 +7,5 @@ public class n1436 {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
         int answer=666;
-        while ()
     }
 }
