@@ -9,6 +9,7 @@ public class CutArray {
         for(long i=left; i<=right; i++){
             answer[idx]= (int) Math.max(i/n+1,i%n+1);
             idx++;
+            
         }
         return answer;
     }
