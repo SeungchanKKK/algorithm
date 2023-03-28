@@ -1,14 +1,18 @@
 package com.example.algo;
 
-import com.example.algo.programmers.OverPainting;
+import com.example.algo.programmers.MatrixMultiplication;
+import com.example.algo.programmers.RotatingParentheses;
+import com.example.algo.programmers.RoughKeyboard;
+
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] ars) {
 
-        OverPainting overPainting = new OverPainting();
-        int[] sec ={2, 3, 6};
-        int a= overPainting.solution(8,4,sec);
-        System.out.println(a);
+        RoughKeyboard roughKeyboard = new RoughKeyboard();
+        String[] keymap ={"AGZ", "BSSS"};
+        String[] targets={"ASA","BGZ"};
+        System.out.println(Arrays.toString(roughKeyboard.solution(keymap, targets)));
 
     }
 }
