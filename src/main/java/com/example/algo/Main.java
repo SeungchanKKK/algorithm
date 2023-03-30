@@ -7,9 +7,9 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] ars) {
 
-        DesktopCleaningUp roughKeyboard = new DesktopCleaningUp();
-        String[] keymap ={"..........", ".....#....", "......##..", "...##.....", "....#....."};
-        System.out.println(Arrays.toString(roughKeyboard.solution(keymap)));
+        SelectingTangerine roughKeyboard = new SelectingTangerine();
+        int[] keymap ={1, 3, 2, 5, 4, 5, 2, 3};
+        System.out.println(roughKeyboard.solution(6,keymap));
 
     }
 }
