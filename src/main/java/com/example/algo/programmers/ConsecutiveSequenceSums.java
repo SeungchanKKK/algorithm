@@ -4,22 +4,22 @@ import java.util.ArrayList;
 //연속 부분 수열 합의 개수
 public class ConsecutiveSequenceSums {
     public int solution(int[] elements) {
-        int answer = 0;
         ArrayList<Integer>sums = new ArrayList<>();
-        for (int i=1; i<=elements.length; i++){
-
+        for (int i=0; i<elements.length; i++){
+            getSum(i,elements,sums);
         }
-        return answer;
+        return sums.size();
     }
 
-    public int sums(int reps, int[] arr){
-        int rep=0;
-        for (int i=rep; i<arr.length;i++){
-            int sum=0;
-            if (rep==reps){
-                return sum;
+    public void getSum(int reps, int[] arr, ArrayList<Integer>sums) {
+        for (int i = 0; i <= arr.length; i++) {
+            int sum =0;
+            for (int j = 0; j <= reps; j++) {
+            sum+= arr[(i+j)%arr.length];
+            }
+            if (!sums.contains(sum)){
+                sums.add(sum);
             }
         }
-        return 0;
     }
 }
