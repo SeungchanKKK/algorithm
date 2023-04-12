@@ -19,6 +19,6 @@ public class RunningRace {
         players[position-1] = player;
         players[position] = passed;
         ranking.put(player,position-1);
-        ranking.put(passed,position+1);
+        ranking.put(passed,position);
     }
 }
