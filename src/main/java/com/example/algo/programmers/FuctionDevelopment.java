@@ -11,8 +11,8 @@ public class FuctionDevelopment {
             system.add(progress);
         }
         while (!system.isEmpty()){
-            for (int i=0; i<progresses.length;i++){
-                if()
+            while (system.poll()<=100){
+
             }
         }
         return answer;
