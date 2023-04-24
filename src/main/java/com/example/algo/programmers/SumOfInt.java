@@ -1,7 +1,11 @@
 package com.example.algo.programmers;
 
 public class SumOfInt {
-    public String solution(String myString) {
-        return myString.toLowerCase();
+    public int solution(int number, int n, int m) {
+        if(number%n==0&&number%m==0){
+            return 1;
+        }else {
+            return 0;
+        }
     }
 }
