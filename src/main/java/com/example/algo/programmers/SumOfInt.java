@@ -1,18 +1,14 @@
 package com.example.algo.programmers;
 
-import java.util.Arrays;
+import java.util.Scanner;
 
 public class SumOfInt {
-    public int[] solution(int[] arr) {
-        for (int i=0;i<arr.length;i++){
-            int num = arr[i];
-            if(num>=50&&num%2==0){
-                num/=2;
-            } else if (num<50&&num%2==1) {
-                num*=2;
-            }
-            arr[i]=num;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        int n = sc.nextInt();
+        for (int i=0; i<5;i++){
+            System.out.print(str);
         }
-        return arr;
     }
 }
