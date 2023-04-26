@@ -1,12 +1,15 @@
 package com.example.algo.programmers;
 
 public class SumOfInt {
-    public String solution(String str1, String str2) {
-        StringBuilder answer = new StringBuilder();
-        for (int i=0; i<str1.length();i++){
-            answer.append(str1.charAt(i));
-            answer.append(str2.charAt(i));
+    public int solution(int a, int b) {
+        String front = String.valueOf(a);
+        String behind = String.valueOf(b);
+        int ab = Integer.parseInt(front+behind);
+        int ba = Integer.parseInt(behind+front);
+        if(ab>=ba){
+            return ab;
+        }else {
+            return ba;
         }
-        return answer.toString();
     }
 }
