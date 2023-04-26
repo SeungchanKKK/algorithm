@@ -1,17 +1,12 @@
 package com.example.algo.programmers;
 
-import java.util.Scanner;
-
 public class SumOfInt {
-    public String solution(String my_string, String overwrite_string, int s) {
-        String answer = "";
-        for (int i=0; i<my_string.length();i++){
-            if(i>=s&&i<overwrite_string.length()+s-1){
-                answer+=overwrite_string.charAt(i-s);
-            }else {
-                answer+=my_string.charAt(i);
-            }
+    public String solution(String str1, String str2) {
+        StringBuilder answer = new StringBuilder();
+        for (int i=0; i<str1.length();i++){
+            answer.append(str1.charAt(i));
+            answer.append(str2.charAt(i));
         }
-        return answer;
+        return answer.toString();
     }
 }
