@@ -3,21 +3,29 @@ package com.example.algo.programmers;
 import java.util.ArrayList;
 
 public class SumOfInt {
-    public int[] solution(int n) {
+    public int[] solution(int[] arr) {
         ArrayList<Integer>array = new ArrayList<>();
-        array.add(n);
-        while (n!=1){
-            if(n%2==0){
-                n/=2;
+        int i=0;
+        while (true){
+            if (array.isEmpty()){
+                array.add(arr[i]);
+                i++;
             }else {
-                n=n*3+1;
+                if(array.get(array.size()-1)<arr[i]){
+                    array.add(arr[i]);
+                    i++;
+                    if(arr.length==i){
+                        break;
+                    }
+                }else {
+                    array.remove(array.size()-1);
+                }
             }
-            array.add(n);
         }
-        int[] answer = new int[array.size()];
-        for (int i=0; i<answer.length; i++){
-            answer[i]=array.get(i);
+        int[] stk = new int[array.size()];
+        for (int j=0; j<stk.length; j++){
+            stk[j]=array.get(j);
         }
-        return answer;
+        return stk;
     }
 }
