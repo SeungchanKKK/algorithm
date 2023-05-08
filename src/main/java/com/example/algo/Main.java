@@ -1,15 +1,12 @@
 package com.example.algo;
 
-import com.example.algo.programmers.*;
-
-import java.util.Arrays;
+import com.example.algo.programmers.DiceGame3;
 
 public class Main {
     public static void main(String[] ars) {
 
-        ConsecutiveSequenceSums roughKeyboard = new ConsecutiveSequenceSums();
-        int[] keymap ={7,9,1,1,4};
-        System.out.println(roughKeyboard.solution(keymap));
+        DiceGame3 roughKeyboard = new DiceGame3();
+        System.out.println(roughKeyboard.solution(1,1,1,4));
 
     }
 }
