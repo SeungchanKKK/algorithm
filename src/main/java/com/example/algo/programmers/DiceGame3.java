@@ -3,12 +3,14 @@ package com.example.algo.programmers;
 import java.util.Arrays;
 
 public class DiceGame3 {
-    public int[] solution(int[] num_list) {
-        int[] answer = new int[5];
-        Arrays.sort(num_list);
-        for (int i=0; i<5; i++){
-            answer[i]=num_list[i];
+    public String[] solution(String my_string) {
+        String[] answer = new String[my_string.length()];
+        int idx =0;
+        for (int i=my_string.length()-2; i>0; i--){
+            answer[idx]=my_string.substring(i);
+            idx++;
         }
+        Arrays.sort(answer);
         return answer;
     }
 }
