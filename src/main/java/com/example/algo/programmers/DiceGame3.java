@@ -1,33 +1,17 @@
 package com.example.algo.programmers;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 
 public class DiceGame3 {
-    public int[] solution(int l, int r) {
-        String[] nums = {"1","2","3","4","6","7","8","9"};
-        ArrayList<Integer>numList = new ArrayList<>();
-        for (int i=l;i<=r;i++){
-            boolean check = true;
-            for (String num:nums){
-                if(String.valueOf(i).contains(num)){
-                    check=false;
-                    break;
-                }
-            }
-            if(check){
-                numList.add(i);
+    public int[] solution(int[] arr) {
+        int[] answer = new int[Arrays.stream(arr).sum()];
+        int idx=0;
+        for (int num:arr){
+            for (int i=0; i<num;i++){
+                answer[idx]=num;
+                idx++;
             }
         }
-        if(numList.isEmpty()){
-            int[]answer = new int[1];
-            answer[0]=-1
-            return answer;
-        }else {
-            int[]answer = new int[numList.size()];
-            for (int j=0; j<answer.length; j++){
-                answer[j]=numList.get(j);
-            }
-            return answer;
-        }
+        return answer;
     }
 }
