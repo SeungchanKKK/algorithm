@@ -1,78 +1,33 @@
 package com.example.algo.programmers;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
 
 public class DiceGame3 {
-    public int solution(int a, int b, int c, int d) {
-        int answer = 0;
-        Map<Integer,Integer>diceMap = new HashMap<>();
-        diceMap.put(a,1);
-        putDice(diceMap,b);
-        putDice(diceMap,c);
-        putDice(diceMap,d);
-        if(diceMap.size()==1){
-            return a*1111;
-        }
-        if (diceMap.size()==2){
-            int smaller =0;
-            int bigger =0;
-            for (Integer diceNum: diceMap.keySet()){
-                if(diceMap.get(diceNum)==1){
-                    smaller=diceNum;
-                }
-                if(diceMap.get(diceNum)==3){
-                    bigger=diceNum;
-                }
-                if(diceMap.get(diceNum)==2&&smaller==0){
-                    smaller=diceNum;
-                }
-                if(diceMap.get(diceNum)==2&&diceNum!=smaller) {
-                    bigger = diceNum;
+    public int[] solution(int l, int r) {
+        String[] nums = {"1","2","3","4","6","7","8","9"};
+        ArrayList<Integer>numList = new ArrayList<>();
+        for (int i=l;i<=r;i++){
+            boolean check = true;
+            for (String num:nums){
+                if(String.valueOf(i).contains(num)){
+                    check=false;
+                    break;
                 }
             }
-            System.out.println(smaller);
-            System.out.println(bigger);
-            if(diceMap.get(smaller)==1||diceMap.get(bigger)==3){
-                return (int) Math.pow((10*bigger+smaller),2);
-            }else {
-                return (smaller+bigger)*Math.abs(smaller-bigger);
+            if(check){
+                numList.add(i);
             }
         }
-        if(diceMap.size()==3){
-            int p =0;
-            int q = 0;
-            int r =0;
-            for (Integer diceNum: diceMap.keySet()){
-                if(diceMap.get(diceNum)==2){
-                    p=diceNum;
-                }
-                if(diceMap.get(diceNum)==1&&q==0) {
-                    q = diceNum;
-                }
-                if(diceMap.get(diceNum)==1&&diceNum!=q) {
-                    r = diceNum;
-                }
-            }
-            return q*r;
-        }
-        if (diceMap.size()==4){
-            int min =7;
-            for (Integer diceNum: diceMap.keySet()){
-                if(diceNum<min){
-                    min=diceNum;
-                }
-            }
-            return min;
-        }
-        return answer;
-    }
-
-    public void putDice(Map<Integer,Integer> map,int num){
-        if(map.containsKey(num)){
-            map.put(num,map.get(num)+1);
+        if(numList.isEmpty()){
+            int[]answer = new int[1];
+            answer[0]=-1
+            return answer;
         }else {
-            map.put(num,1);
+            int[]answer = new int[numList.size()];
+            for (int j=0; j<answer.length; j++){
+                answer[j]=numList.get(j);
+            }
+            return answer;
         }
     }
 }
