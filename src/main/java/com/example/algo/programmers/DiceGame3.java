@@ -1,16 +1,13 @@
 package com.example.algo.programmers;
 
-import java.util.Arrays;
-
 public class DiceGame3 {
-    public String[] solution(String my_string) {
-        String[] answer = new String[my_string.length()];
-        int idx =0;
-        for (int i=my_string.length()-2; i>0; i--){
-            answer[idx]=my_string.substring(i);
-            idx++;
+    public int[] solution(int[] num_list, int n) {
+        int[] answer = new int[num_list.length];
+        int idx =n-1;
+        for (int i=0; i<num_list.length;i++){
+            answer[i]=num_list[idx% num_list.length];
+            
         }
-        Arrays.sort(answer);
         return answer;
     }
 }
