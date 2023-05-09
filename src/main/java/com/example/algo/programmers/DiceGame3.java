@@ -1,21 +1,15 @@
 package com.example.algo.programmers;
 
-import java.util.ArrayList;
-
 public class DiceGame3 {
-    public int[] solution(String[] intStrs, int k, int s, int l) {
-        ArrayList<Integer>numList = new ArrayList<>();
-        for (String str:intStrs){
-            String amount=str.substring(s,l);
-            System.out.println(amount);
-            if (Integer.parseInt(amount)>k){
-                numList.add(Integer.parseInt(amount));
-            }
+    public String solution(String my_string, int s, int e) {
+        StringBuilder start = new StringBuilder(my_string.substring(0, s - 1));
+        String middle = my_string.substring(s,e);
+        String end = my_string.substring(e);
+        System.out.println(middle);
+        for (int i=middle.length()-1;i>=0;i++){
+            start.append(middle.charAt(i));
         }
-        int[] answer = new int[numList.size()];
-        for (int i=0; i<answer.length; i++){
-            answer[i]=numList.get(i);
-        }
-        return answer;
+        start.append(end);
+        return String.valueOf(start);
     }
 }
