@@ -1,13 +1,18 @@
 package com.example.algo.programmers;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class DiceGame3 {
-    public String solution(int q, int r, String code) {
-        StringBuilder answer = new StringBuilder();
-        for (int i=0; i<code.length();i++){
-            if(i%q==r){
-                answer.append(code.charAt(i));
+    public String[] solution(String myString) {
+        String[] answer = myString.split("x");
+        ArrayList<String>strList = new ArrayList<>();
+        Arrays.sort(answer);
+        for (String str: answer){
+            if(str.length()!=0){
+                strList.add(str);
             }
         }
-        return answer.toString();
+        return strList.toArray(new String[0]);
     }
 }
