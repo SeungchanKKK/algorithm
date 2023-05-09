@@ -1,11 +1,13 @@
 package com.example.algo.programmers;
 
 public class DiceGame3 {
-    public String solution(String my_string, int m, int c) {
-        String answer = "";
-        for (int i=c-1; i<my_string.length()-1;i+=m){
-            answer+=my_string.charAt(i);
+    public String solution(int q, int r, String code) {
+        StringBuilder answer = new StringBuilder();
+        for (int i=0; i<code.length();i++){
+            if(i%q==r){
+                answer.append(code.charAt(i));
+            }
         }
-        return answer;
+        return answer.toString();
     }
 }
