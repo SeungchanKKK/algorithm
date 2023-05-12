@@ -30,6 +30,7 @@ public class DiceGame3 {
 
     public int[] arrayset(int start,int end, int gap,int[]num_list){
         int[]result = new int[(end-start)/gap+1];
+        System.out.println(result.length);
         int idx=0;
         for (int i=0; i<num_list.length; i+=gap){
             result[idx]=num_list[i];
