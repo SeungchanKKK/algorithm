@@ -1,31 +1,27 @@
 package com.example.algo.programmers;
 
+import java.util.Arrays;
+
 public class DiceGame3 {
-    public int[] solution(int[] arr) {
-        int startIndex = -1;
-        int endIndex = -1;
-        for (int i=0; i<arr.length;i++){
-            if(arr[i]==2){
-                startIndex=i;
-                break;
-            }
-        }
-        for (int i=arr.length-1;i>=0;i--){
-            if(arr[i]==2){
-                endIndex=i;
-                break;
-            }
-        }
-        int[] answer = {};
-        if (startIndex==-1&&endIndex==-1){
-            answer=new int[1];
-            answer[0]=-1;
-            return answer;
-        }else {
-            answer=new int[endIndex-startIndex+1];
-            int idx=0;
-            for (int i = startIndex; i<=endIndex;i++){
-                answer[idx]= arr[i];
+    public int[] solution(int[] arr, int[] query) {
+        int[] answer = arr;
+        for (int i = 0; i < query.length; i++) {
+            if (i % 2 == 0) {
+                answer = new int[query[i] + 1];
+                for (int j = 0; j < answer.length; j++) {
+                    answer[j] = arr[j];
+                }
+                arr = answer;
+                System.out.println(Arrays.toString(answer));
+            } else {
+                answer = new int[answer.length - query[i]];
+                int idx = 0;
+                for (int j = query[i]; j < answer.length; j++) {
+                    answer[idx] = arr[j];
+                    idx++;
+                }
+                arr = answer;
+                System.out.println(Arrays.toString(answer));
             }
         }
         return answer;
