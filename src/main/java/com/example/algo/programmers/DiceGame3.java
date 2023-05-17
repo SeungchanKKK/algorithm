@@ -1,12 +1,12 @@
 package com.example.algo.programmers;
 
 public class DiceGame3 {
-    public String solution(String myString, String pat) {
-        String answer = "";
-        for (int i=myString.length()-1; i-pat.length()>=0; i--){
-            String part = myString.substring(i-pat.length(),i);
-            if(part.equals(pat)){
-                return myString.substring(0,i);
+    public int solution(String myString, String pat) {
+        int answer = 0;
+        for (int i=0; i<myString.length()-pat.length();i++){
+            String part = myString.substring(i,i+pat.length());
+            if (part.equals(pat)){
+                answer++;
             }
         }
         return answer;
