@@ -1,28 +1,26 @@
 package com.example.algo.programmers;
 
-import java.util.ArrayList;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 public class DiceGame3 {
-    public String[] solution(String myStr) {
-        ArrayList<String>stringArrayList = new ArrayList<>();
-        StringBuilder part = new StringBuilder();
-        for (int i=0; i<myStr.length(); i++){
-            String letter = String.valueOf(myStr.charAt(i));
-            if (letter.equals("a")||letter.equals("b")||letter.equals("c")){
-                if(part.length()!=0){
-                    stringArrayList.add(part.toString());
+    public int[] solution(int[] arr, boolean[] flag) {
+        Deque<Integer> numStack= new ArrayDeque<>();
+        for (int i=0; i<arr.length; i++){
+            if (flag[i]){
+                for (int j=0; j<arr[i]*2;j++){
+                    numStack.push(arr[i]);
                 }
-                part = new StringBuilder();
             }else {
-                part.append(letter);
+                for (int j=0; j<arr[i];j++){
+                    numStack.pop();
+                }
             }
         }
-        if(part.length()!=0){
-            stringArrayList.add(part.toString());
+        int[] answer = new int[numStack.size()];
+        for (int i=0; i<answer.length; i++){
+            answer[i]=numStack.pollFirst();
         }
-        if(stringArrayList.size()==0){
-            stringArrayList.add("EMPTY");
-        }
-        return stringArrayList.toArray(new String[0]);
+        return answer;
     }
 }
