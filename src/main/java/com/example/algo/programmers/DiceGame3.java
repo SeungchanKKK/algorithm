@@ -1,20 +1,18 @@
 package com.example.algo.programmers;
 
 public class DiceGame3 {
-    public int[] solution(int[] arr) {
-        int size =1;
-        while (size<arr.length){
-            size*=2;
+    public int solution(String[] strArr) {
+        int[] idxArr = new int[31];
+        for (int i=0; i< strArr.length; i++){
+            idxArr[strArr[i].length()]++;
         }
-        size*=2;
-        int[] answer = new int[size];
-        for (int i=0; i<answer.length; i++){
-            if(i+1>arr.length){
-                answer[i]=0;
-            }else {
-                answer[i]=arr[i];
+        int max = 0;
+        for (int i=0; i<idxArr.length;i++){
+            if (idxArr[i]>max){
+                max=idxArr[i];
             }
         }
+        int answer = max;
         return answer;
     }
 }
