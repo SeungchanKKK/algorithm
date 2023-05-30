@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] ars) {
 
         DiceGame3 roughKeyboard = new DiceGame3();
-        String[] arr = {"x.x", ".x.", "x.x"};
+        int[] arr = {"x.x", ".x.", "x.x"};
         System.out.println(Arrays.toString(roughKeyboard.solution(arr,4)));
 
     }

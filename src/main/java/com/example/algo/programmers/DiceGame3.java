@@ -1,18 +1,14 @@
 package com.example.algo.programmers;
 
 public class DiceGame3 {
-    public String[] solution(String[] picture, int k) {
-        String[] answer = new String[picture.length*k];
-        for (int i=0; i<answer.length; i++){
-            StringBuilder stringBuilder = new StringBuilder();
-            String origin = picture[i/k];
-            for (int j=0; j<origin.length(); j++){
-                for (int l=0; l<k;l++){
-                    stringBuilder.append(origin.charAt(j));
+    public int solution(int[][] board, int k) {
+        int answer = 0;
+        for (int i=0; i<= board.length;i++){
+            for (int j=0; j<=board[0].length;j++){
+                if(i+j<=k){
+                    answer+=board[i][j];
                 }
             }
-            answer[i]=stringBuilder.toString();
-            System.out.println(answer[i]);
         }
         return answer;
     }
