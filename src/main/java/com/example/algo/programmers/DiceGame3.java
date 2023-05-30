@@ -1,20 +1,18 @@
 package com.example.algo.programmers;
 
 public class DiceGame3 {
-    public int solution(int[] date1, int[] date2) {
-        int answer = 1;
-        for (int i=0; i<date1.length; i++){
-            if (date1[i] > date2[i]) {
-                answer = 0;
-                break;
+    public String[] solution(String[] picture, int k) {
+        String[] answer = new String[picture.length*k];
+        for (int i=0; i<answer.length; i++){
+            StringBuilder stringBuilder = new StringBuilder();
+            String origin = picture[i/k];
+            for (int j=0; j<origin.length(); j++){
+                for (int l=0; l<k;l++){
+                    stringBuilder.append(origin.charAt(j));
+                }
             }
-            if(date1[i] < date2[i]){
-                answer=1;
-                break;
-            }
-            if (date1[2]==date2[2]){
-                return 0;
-            }
+            answer[i]=stringBuilder.toString();
+            System.out.println(answer[i]);
         }
         return answer;
     }
