@@ -1,12 +1,15 @@
 package com.example.algo.programmers;
 
 public class DiceGame3 {
-    public int solution(int[][] board, int k) {
-        int answer = 0;
-        for (int i=0; i<= board.length;i++){
-            for (int j=0; j<=board[0].length;j++){
-                if(i+j<=k){
-                    answer+=board[i][j];
+    public int[][] solution(int[][] arr) {
+        int max=Math.max(arr.length,arr[0].length);
+        int[][] answer = new int[max][max];
+        for (int i=0; i<answer.length; i++){
+            for (int j=0; j<answer[i].length; j++){
+                if(i>= arr.length||j>= arr[i].length){
+                    answer[i][j]=0;
+                }else {
+                    answer[i][j]=arr[i][j];
                 }
             }
         }
