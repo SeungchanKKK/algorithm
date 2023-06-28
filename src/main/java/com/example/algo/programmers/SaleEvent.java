@@ -4,29 +4,34 @@ import java.util.HashMap;
 
 public class SaleEvent {
     public int solution(String[] want, int[] number, String[] discount) {
+        int answer=0;
         int totalAmount =0;
         for (int num: number){
             totalAmount+=num;
         }
-        HashMap<String,Integer>hashMap = new HashMap<>();
+        HashMap<String,Integer>amtList = new HashMap<>();
         for (int i=0; i<want.length;i++){
-            hashMap.put(want[i],number[i]);
+            amtList.put(want[i],number[i]);
         }
-        for (int i=0; i<discount.length-totalAmount; i++){
-            for (int j=i; j<=totalAmount; j++){
+        for (int i=0; i<=discount.length-totalAmount; i++){
+            HashMap<String,Integer>hashMap=new HashMap<>(amtList);
+            for (int j=i; j<10+i; j++){
                 if(hashMap.containsKey(discount[j])){
                     int amt = hashMap.get(discount[j])-1;
                     hashMap.put(discount[j],amt);
-                    if (amt==0){
+                    if (hashMap.get(discount[j])==0){
                         hashMap.remove(discount[j]);
                     }
                 }
                 if(hashMap.isEmpty()){
-                    return i;
+                    answer+=(i+1);
+                    System.out.println(answer);
+                    break;
                 }
             }
+
         }
-        return 0;
+        return answer;
     }
 
     public static void main(String[] args) {
