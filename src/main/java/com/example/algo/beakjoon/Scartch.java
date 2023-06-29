@@ -1,24 +1,27 @@
 package com.example.algo.beakjoon;
 
-import java.util.PriorityQueue;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Scartch {
-    public int solution(int[] scoville, int K) {
-        int answer = 0;
-        PriorityQueue<Integer>pq = new PriorityQueue<>(scoville.length);
-        for (int sco: scoville){
-            pq.add(sco);
+    public int solution(int[] A) {
+        int sum =0;
+        int left =0;
+        ArrayList<Integer>list = new ArrayList<>();
+        for (int a:A){
+            sum+=a;
         }
-        int loop = pq.size();
-        while (pq.peek()<K){
-            int small1=pq.poll();
-            int small2=pq.poll();
-            pq.add(small1+(small2*2));
-            answer++;
-            if (pq.size()==1){
-                return -1;
-            }
+        for (int i=0; i<A.length-1;i++){
+            left+=A[i];
+            int result=Math.abs(sum-2*left);
+           list.add(result);
         }
-        return answer;
+        return Collections.min(list);
+    }
+
+    public static void main(String[] args) {
+        int[]A = {3,1,2,4,3};
+        Scartch scartch = new Scartch();
+        scartch.solution(A);
     }
 }
