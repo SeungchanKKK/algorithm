@@ -1,25 +1,33 @@
 package com.example.algo.beakjoon;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class Scartch {
-    public int[] solution(int N, int[] A) {
-        int[]answer = new int[N];
+    public int solution(int[] A, int[] B) {
+        int ans=0;
+        int[][]arr = new int[A.length][2];
         for (int i=0; i<A.length; i++){
-            if (A[i]<=N){
-                answer[A[i]-1]++;
-            }else {
-                int max = answer[i];
-                for(int j=0; j<answer.length;j++){
-                     max = 0;
-                    answer[i]=max;
+            arr[i][0]=A[i];
+            arr[i][1]=A[i];
+        }
+        Arrays.sort(arr, new Comparator<int[]>() {
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                if(o1[1] == o2[1]) {
+                    return o1[0] - o2[0];
                 }
+                return o1[1] - o2[1];
+            }
+        });
+        int occupied =0;
+        for (int i=0; i< arr.length;i++){
+            if (occupied<arr[i][0]){
+                ans++;
+                occupied=arr[i][1];
             }
         }
-        return answer;
-    }
-
-    public static void main(String[] args) {
-        Scartch scartch = new Scartch();
-        int[] arr = {3, 4, 4, 6, 1, 4, 4};
-        scartch.solution(5,arr);
+        System.out.println(ans);
+      return ans;
     }
 }
