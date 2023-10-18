@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
-
+//단어정렬
 public class n1181 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -20,5 +20,6 @@ public class n1181 {
         for (int i=0; i<arr2.size(); i++){
             System.out.println(arr2.get(i));
         }
+
     }
 }
