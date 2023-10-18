@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 //단어정렬
-
 public class n1181 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
