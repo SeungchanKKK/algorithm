@@ -7,6 +7,7 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class N10814 {
+
     public static void main(String[] args) {
         class Person{
             int age;
