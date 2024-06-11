@@ -11,7 +11,7 @@ public class N15649 {
 
     static int []arr = new int[M];
 
-    static boolean []used = new boolean[M+1];
+    static boolean []used = new boolean[N];
 
     static void DFS(int k){
         if (k==M){
@@ -21,10 +21,10 @@ public class N15649 {
             sb.append("\n");
             return;
         }
-        for (int i=1; i<=N; i++){
+        for (int i=0; i<N; i++){
             if (!used[i]) {
                 used[i] = true;
-                arr[k]= i;
+                arr[k]= i+1;
                 DFS(k+1);
                 used[i] = false;
             }
