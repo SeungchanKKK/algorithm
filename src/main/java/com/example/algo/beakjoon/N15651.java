@@ -8,25 +8,33 @@ public class N15651 {
     static Scanner sc = new Scanner(System.in);
     static int N = sc.nextInt();
     static int M = sc.nextInt();
-    static int[]selected = new int[M+1];
+    static int[]arr = new int[M];
+    static int K =1;
+    static int depth =N;
+    static void DFS(int depth) {
+	/*
+	 깊이가 최대 깊이일경우
+	 더이상 탐색할 자식노드는 없으므로 return해준다.
+	*/
+        if(depth == M) {
+            for (int i=0; i<arr.length; i++){
+                sb.append(arr[i]+" ");
+            }
+            sb.append("\n");
+            return;
+        }
 
-    static void reFun(int k){
-        if (k==M+1){
-            for (int i=1; i<=M;i++){
-                sb.append(selected[i]).append(" ");
-            }
-            sb.deleteCharAt(sb.length()-1);
-            sb.append('\n');
-        }else {
-            for (int i=1; i<=N; i++){
-                selected[k]=i;
-                reFun(k+1);
-                selected[k]=0;
-            }
+	/*
+	 깊이를 1씩 증가시키면서 DFS를
+	 재귀호출한다.
+	*/
+        for(int i = 1; i <= N; i++) {
+            arr[depth] = i;
+            DFS(depth + 1);
         }
     }
     public static void main(String[] args) {
-        reFun(1);
+        DFS(0);
         System.out.println(sb.toString());
     }
 }
