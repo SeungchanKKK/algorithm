@@ -1,34 +1,45 @@
 package com.example.algo.beakjoon;
 
+import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
+
 import java.util.Scanner;
 
 public class N1182 {
     static Scanner sc = new Scanner(System.in);
-    static int cnt = 0;
-    static int S;
-    static int N;
-    static int[] arr;
+    static int N = sc.nextInt();
+    static int S = sc.nextInt();
+    static int[] arr = new int[N];
+    static int count = 0;
+    static int sum =0;
 
-    private static void dfs(int depth, int sum) {
-        if (depth == N) {
-            if (sum == S) cnt++;
-            return;
+    static boolean[] used = new boolean[N];
+    static void DFS(int k){
+        if (k==N){
+        }else {
+            int [] parts = new int[k+1];
+            for (int i=0; i<arr.length; i++){
+                for (int j=0; j<parts.length; j++){
+                    if (!used[i]){
+                        parts[j]=arr[i];
+                        used[i]=true;
+                    }
+                }
+                for (int part: parts){
+                    sum+=part;
+                }
+                if (S==sum){
+                    count++;
+                    sum=0;
+                }
+                DFS(k+1);
+                used[i]=false;
+            }
         }
-        //tree를 생각해서 직접 그려보면 이해하기가 쉽습니다.
-        dfs(depth + 1, sum + arr[depth]);
-        dfs(depth + 1, sum);
     }
     public static void main(String[] args) {
-        N = sc.nextInt();
-        S = sc.nextInt();
-        arr= new int[N];
-        for (int i = 0; i < N; i++) {
-            arr[i]=sc.nextInt();
+        for (int i=0; i< arr.length; i++){
+            arr[i]= sc.nextInt();
         }
-        dfs(0,0);
-        if (S == 0) System.out.println(cnt - 1);
-            //S 0일때가 전체 합이 0 일때랑 겹치기 때문에 -1 을 해주어야 합니다.
-            //위의 사진에 공집합이 0이라고 볼 수 있습니다
-        else System.out.println(cnt);
+        DFS(0);
     }
 }
