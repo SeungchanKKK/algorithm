@@ -3,7 +3,6 @@ package com.example.algo.programmers;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Queue;
-import java.util.Stack;
 
 public class TruckPassingTheBridge {
     public static void main(String[] args) {
