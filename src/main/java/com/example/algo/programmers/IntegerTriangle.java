@@ -3,32 +3,27 @@ package com.example.algo.programmers;
 import java.util.ArrayList;
 
 public class IntegerTriangle {
+    public static void main(String[] args) {
+        IntegerTriangle integerTriangle = new IntegerTriangle();
+        integerTriangle.solution(new int[][]{{7},{3,8},{8,1,0},{2,7,4,4},{4,5,2,6,5}});
+    }
     ArrayList<Integer>sum = new ArrayList<>();
     ArrayList<Integer>[]sums;
-    int max =0;
     public int solution(int[][] triangle) {
-        int answer = 0;
         sums = new ArrayList[triangle.length];
-        return answer;
-    }
-
-    public void DFS(int d,int[][] triangle){
-        if (d==triangle.length){
-            if (sums[d])
-        }else {
-            for (int i=0; i<triangle[d].length; i++){
+        sums[0]=sum;
+        sums[0].add(triangle[0][0]);
+        for (int d=1;d<triangle.length;d++){
+            sum = new ArrayList<>();
+            for (int i=0;i<sums[d-1].size();i++){
                 for (int j=0; j<2; j++){
-                    if (j==0){
-                        int num = sums[d].get(i);
-                        sums[d+1].add(num+triangle[d+1][i]);
-                        DFS(d+1,triangle);
-                    }else {
-                        int num = sums[d].get(i);
-                        sums[d+1].add(num+triangle[d+1][i+1]);
-                    }
+                    int num = sums[d-1].get(i);
+                        num+=triangle[d][i+j];
+                    sum.add(num);
                 }
-                DFS(d+1,triangle);
             }
+            sums[d]=sum;
         }
+        return 3;
     }
 }
