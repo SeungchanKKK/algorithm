@@ -6,15 +6,14 @@ public class Network {
         return answer;
     }
     int idx=0;
-    public void DFS(int d,int[][] computers) {
-        if (d==computers.length){
+    public void DFS(boolean d,int[][] computers) {
+        if (!d){
 
             }else {
-            for (int i=idx; i<computers.length; i++){
-                if (d!=i){
+            for (int i=0; i<computers.length; i++){
 
-                }
             }
         }
     }
+
 }
