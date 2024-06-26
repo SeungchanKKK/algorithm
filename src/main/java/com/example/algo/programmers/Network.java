@@ -5,4 +5,16 @@ public class Network {
         int answer = 0;
         return answer;
     }
+    int idx=0;
+    public void DFS(int d,int[][] computers) {
+        if (d==computers.length){
+
+            }else {
+            for (int i=idx; i<computers.length; i++){
+                if (d!=i){
+
+                }
+            }
+        }
+    }
 }
