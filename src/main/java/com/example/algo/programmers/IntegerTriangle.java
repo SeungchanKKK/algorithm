@@ -1,29 +1,26 @@
 package com.example.algo.programmers;
 
-import java.util.ArrayList;
-
 public class IntegerTriangle {
     public static void main(String[] args) {
         IntegerTriangle integerTriangle = new IntegerTriangle();
         integerTriangle.solution(new int[][]{{7},{3,8},{8,1,0},{2,7,4,4},{4,5,2,6,5}});
     }
-    ArrayList<Integer>sum = new ArrayList<>();
-    ArrayList<Integer>[]sums;
     public int solution(int[][] triangle) {
-        sums = new ArrayList[triangle.length];
-        sums[0]=sum;
-        sums[0].add(triangle[0][0]);
-        for (int d=1;d<triangle.length;d++){
-            sum = new ArrayList<>();
-            for (int i=0;i<sums[d-1].size();i++){
-                for (int j=0; j<2; j++){
-                    int num = sums[d-1].get(i);
-                        num+=triangle[d][i+j];
-                    sum.add(num);
-                }
+        int[][] dp = new int[triangle.length][triangle.length];
+        dp[0][0] = triangle[0][0];
+        for (int i=1; i<dp.length; i++){
+            dp[i][0] = dp[i-1][0]+triangle[i][0];
+            for (int j=1; j<triangle[i].length;j++){
+                dp[i][j] = Math.max(dp[i-1][j-1]+triangle[i][j],dp[i-1][j]+triangle[i][j]);
             }
-            sums[d]=sum;
+            dp[i][i] = dp[i-1][i-1]+triangle[i][i];
         }
-        return 3;
+        int answer = 0;
+
+        for (int i = 0; i < triangle.length; i++) {
+            answer = Math.max(answer, dp[triangle.length - 1][i]);
+        }
+
+        return answer;
     }
 }
